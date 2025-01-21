@@ -1,0 +1,63 @@
+Simple Mecanum TeleOp Code Explanation
+This guide explains how the provided TeleOp code works and how to configure your robot in the FTC Driver Station.
+
+Code Logic (Pseudocode)
+Define Motors:
+
+The program declares four motors corresponding to the four wheels: Back Left (BL), Front Left (FL), Front Right (FR), Back Right (BR).
+Initialize Hardware:
+
+Motors are linked to the configuration names defined in the FTC Driver Station (e.g., "LB" for Back Left Motor).
+Set Motor Directions:
+
+To make the robot move correctly, the left-side motors (LB, LF) are reversed while the right-side motors (RF, RB) are set to forward.
+Gamepad Input:
+
+The program reads joystick inputs from the Gamepad:
+Left Stick Y: Forward/Backward movement.
+Left Stick X: Side-to-side strafing.
+Right Stick X: Rotation.
+Calculate Motor Power:
+
+Uses mecanum wheel formulas to calculate power for each wheel:
+BL Power = Forward/Backward + Strafing + Rotation
+FL Power = Forward/Backward - Strafing + Rotation
+BR Power = Forward/Backward - Strafing - Rotation
+FR Power = Forward/Backward + Strafing - Rotation
+Set Power to Motors:
+
+The calculated power values are assigned to the respective motors, enabling movement in all directions.
+Telemetry:
+
+Displays motor power values on the Driver Station for debugging purposes.
+Step-by-Step Robot Configuration Guide
+Open the FTC Driver Station Configuration:
+
+Launch the FTC Driver Station app on your phone.
+Go to the "Configure Robot" section.
+Add Motors to the Configuration:
+
+Add four motors and name them exactly as follows:
+LB: Back Left motor.
+LF: Front Left motor.
+RF: Front Right motor.
+RB: Back Right motor.
+Set Motor Directions:
+
+Assign motor directions:
+LB and LF: Set to REVERSE.
+RF and RB: Set to FORWARD.
+Connect Motors to the REV Hub:
+
+Connect the motors to the correct ports on the REV Hub.
+Ensure the ports match the configuration.
+Test Motor Movement:
+
+Once the code is uploaded to your robot, test the controls to ensure:
+Joystick movements correspond to the expected robot movement (forward, backward, strafing, rotation).
+Need More Help?
+If you have trouble with setup or coding, here are resources to help:
+
+Email: thearchitectsftc@gmail.com
+YouTube: Search for “FTC Mecanum Drive Tutorials” for videos explaining hardware and programming basics.
+This guide is designed to make setup easy and accessible for all FTC teams. Good luck, and happy coding! 🚀
